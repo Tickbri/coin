@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매매법 탐구생활 - 홈</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+      @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/PuradakGentleGothic.css');
+      
+      /* PuraDak 폰트를 기본으로 하되, 본문은 Noto Sans KR 사용 */
+      body {
+        font-family: 'Noto Sans KR', 'Inter', sans-serif;
+        background-color: #ffffff; /* 기본 배경 흰색 */
+        color: #1a202c; /* 기본 텍스트 색상 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* 브랜드 이름과 주요 헤더에만 PuraDak 폰트 적용 */
+      .font-brand {
+        font-family: 'PuradakGentleGothic', 'Noto Sans KR', sans-serif;
+      }
+
+      /* 포인트 색상 변수 */
+      :root {
+        --brand-blue: #0a358a;
+      }
+
+      /* 헤더 그림자 */
+      header {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      /* 카드 호버 애니메이션 */
+      .card-hover {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* 버튼 호버 애니메이션 */
+      .btn-hover {
+         transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+      }
+      .btn-hover:hover {
+        transform: scale(1.03);
+      }
+
+      /* 컨텐츠 페이드인 애니메이션 */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+      /* 섹션별 애니메이션 딜레이 */
+      .fade-in-1 { animation-delay: 0.1s; opacity: 0; }
+      .fade-in-2 { animation-delay: 0.3s; opacity: 0; }
+      .fade-in-3 { animation-delay: 0.5s; opacity: 0; }
+
+    </style>
+</head>
+<body class="bg-white">
+
+  <!-- 전체 페이지 래퍼 -->
+  <div class="min-h-screen flex flex-col">
+
+    <!-- 1. 헤더 (Header) -->
+    <header class="bg-white sticky top-0 z-50">
+      <div class="container mx-auto max-w-7xl px-6 py-5 flex justify-between items-center">
+        <div class="text-3xl font-extrabold font-brand" style="color: var(--brand-blue);">
+          <a href="index.html">매매법 탐구생활</a>
+        </div>
+        <nav class="flex space-x-8 items-center">
+          <a href="index.html" class="text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
+            홈
+          </a>
+          <a href="join.html" class="text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
+            가입방법
+          </a>
+          <a href="mailto:contact@example.com" class="text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
+            문의하기
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 2. 히어로 섹션 (Hero Section) -->
+    <main class="flex-grow">
+      <section class="container mx-auto max-w-7xl px-6 pt-24 pb-32 text-center flex flex-col items-center fade-in fade-in-1">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-gray-900 font-brand">
+          수수료 없이 거래하세요
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 max-w-3xl">
+          아래 제휴 거래소 링크를 통해 가입하면 <span class="font-bold text-gray-800">평생 수수료 혜택!</span>
+        </p>
+      </section>
+
+      <!-- 3. 제휴 거래소 섹션 (Partner Section) -->
+      <section class="bg-gray-50 py-24">
+        <div class="container mx-auto max-w-5xl px-6">
+          <h2 class="text-4xl font-extrabold text-center mb-16 text-gray-900 font-brand fade-in fade-in-2">
+            제휴 거래소
+          </h2>
+          
+          <div class="space-y-8">
+            <!-- 1. 어센덱스 (AscendEX) 카드 -->
+            <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 shadow-lg card-hover fade-in fade-in-2">
+              <div class="flex items-center space-x-5">
+                <img 
+                  src="unnamed.webp" 
+                  alt="어센덱스 로고" 
+                  class="w-16 h-16 rounded-full object-cover bg-gray-200 shadow-md"
+                  onerror="this.src='https://placehold.co/64x64/E0E0E0/333?text=Logo'; this.onerror=null;"
+                >
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">어센덱스 (AscendEX)</h3>
+                  <p class="text-lg font-semibold" style="color: var(--brand-blue);">지정가 0% / 시장가 0.02%</p>
+                </div>
+              </div>
+              <a href="#" class="bg-blue-800 text-white font-bold py-3 px-8 rounded-lg text-lg whitespace-nowrap btn-hover" style="background-color: var(--brand-blue);">
+                가입하기
+              </a>
+            </div>
+
+            <!-- 2. XT 거래소 (XT.com) 카드 -->
+            <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 shadow-lg card-hover fade-in fade-in-3">
+              <div class="flex items-center space-x-5">
+                <img 
+                  src="unnamed (5).jpg" 
+                  alt="XT 거래소 로고" 
+                  class="w-16 h-16 rounded-full object-cover bg-gray-200 shadow-md"
+                  onerror="this.src='https://placehold.co/64x64/E0E0E0/333?text=Logo'; this.onerror=null;"
+                >
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">XT 거래소 (XT.com)</h3>
+                  <p class="text-lg font-semibold" style="color: var(--brand-blue);">수수료 40% 페이백</p>
+                </div>
+              </div>
+              <a href="#" class="bg-blue-800 text-white font-bold py-3 px-8 rounded-lg text-lg whitespace-nowrap btn-hover" style="background-color: var(--brand-blue);">
+                가입하기
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 4. 푸터 (Footer) -->
+    <footer class="bg-gray-100 border-t border-gray-200">
+      <div class="container mx-auto max-w-7xl px-6 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+          <p class="text-gray-600 text-sm">
+            © 2024 매매법 탐구생활. All rights reserved.
+          </p>
+          <div class="flex justify-center space-x-6 mt-4 md:mt-0">
+            <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">이용약관</a>
+            <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">개인정보처리방침</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
