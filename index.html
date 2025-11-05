@@ -73,79 +73,100 @@
   <!-- 전체 페이지 래퍼 -->
   <div class="min-h-screen flex flex-col">
 
-    <!-- 1. 헤더 (Header) -->
+    <!-- 1. 헤더 (Header) [수정] -->
     <header class="bg-white sticky top-0 z-50">
-      <div class="container mx-auto max-w-7xl px-6 py-5 flex justify-between items-center">
-        <div class="text-3xl font-extrabold font-brand" style="color: var(--brand-blue);">
+      <!-- [수정] 모바일: px-4, sm이상: px-6 / 모바일: py-4, sm이상: py-5 / flex-wrap 추가 -->
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-4 sm:py-5 flex flex-wrap justify-between items-center">
+        <!-- [수정] 모바일: text-2xl, sm이상: text-3xl -->
+        <div class="text-2xl sm:text-3xl font-extrabold font-brand" style="color: var(--brand-blue);">
           <a href="index.html">매매법 탐구생활</a>
         </div>
-        <nav class="flex space-x-8 items-center">
-          <a href="index.html" class="text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
+        <!-- [수정] 모바일: w-full, 중앙 정렬, mt-3 / sm이상: w-auto, space-x-8, mt-0 -->
+        <nav class="w-full sm:w-auto flex justify-center space-x-6 sm:space-x-8 items-center mt-3 sm:mt-0">
+          <!-- [수정] 모바일: text-sm, sm이상: text-base -->
+          <a href="index.html" class="text-sm sm:text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
             홈
           </a>
-          <a href="join.html" class="text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
+          <a href="join.html" class="text-sm sm:text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
             가입방법
           </a>
-          <a href="mailto:contact@example.com" class="text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
+          <a href="mailto:contact@example.com" class="text-sm sm:text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
             문의하기
           </a>
         </nav>
       </div>
     </header>
 
-    <!-- 2. 히어로 섹션 (Hero Section) -->
+    <!-- 2. 히어로 섹션 (Hero Section) [수정] -->
     <main class="flex-grow">
-      <section class="container mx-auto max-w-7xl px-6 pt-24 pb-32 text-center flex flex-col items-center fade-in fade-in-1">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-gray-900 font-brand">
+      <!-- [수정] 모바일: px-4, pt-16, pb-20 / sm이상: px-6, pt-24, pb-32 -->
+      <section class="container mx-auto max-w-7xl px-4 sm:px-6 pt-16 sm:pt-24 pb-20 sm:pb-32 text-center flex flex-col items-center fade-in fade-in-1">
+        <!-- [수정] 모바일: text-4xl / sm이상: text-5xl / md이상: text-7xl -->
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 text-gray-900 font-brand">
           수수료 없이 거래하세요
         </h1>
-        <p class="text-xl md:text-2xl text-gray-600 max-w-3xl">
+        <!-- [수정] 모바일: text-lg / sm이상: text-xl / md이상: text-2xl -->
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl">
           아래 제휴 거래소 링크를 통해 가입하면 <span class="font-bold text-gray-800">평생 수수료 혜택!</span>
         </p>
       </section>
 
-      <!-- 3. 제휴 거래소 섹션 (Partner Section) -->
-      <section class="bg-gray-50 py-24">
-        <div class="container mx-auto max-w-5xl px-6">
-          <h2 class="text-4xl font-extrabold text-center mb-16 text-gray-900 font-brand fade-in fade-in-2">
+      <!-- 3. 제휴 거래소 섹션 (Partner Section) [수정] -->
+      <!-- [수정] 모바일: py-16 / sm이상: py-24 -->
+      <section class="bg-gray-50 py-16 sm:py-24">
+        <!-- [수정] 모바일: px-4 / sm이상: px-6 -->
+        <div class="container mx-auto max-w-5xl px-4 sm:px-6">
+          <!-- [수정] 모바일: text-3xl, mb-12 / sm이상: text-4xl, mb-16 -->
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 sm:mb-16 text-gray-900 font-brand fade-in fade-in-2">
             제휴 거래소
           </h2>
           
           <div class="space-y-8">
-            <!-- 1. 어센덱스 (AscendEX) 카드 -->
+            <!-- 1. 어센덱스 (AscendEX) 카드 [수정] -->
+            <!-- [수정] 모바일: p-6 / md이상: p-8. items-center 유지 -->
             <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 shadow-lg card-hover fade-in fade-in-2">
-              <div class="flex items-center space-x-5">
+              <!-- [수정] 모바일: space-x-4 / sm이상: space-x-5 -->
+              <div class="flex items-center space-x-4 sm:space-x-5">
                 <img 
                   src="unnamed.webp" 
                   alt="어센덱스 로고" 
-                  class="w-16 h-16 rounded-full object-cover bg-gray-200 shadow-md"
+                  /* [수정] 모바일: w-14 h-14 / sm이상: w-16 h-16 */
+                  class="w-14 h-14 sm:w-16 h-16 rounded-full object-cover bg-gray-200 shadow-md flex-shrink-0"
                   onerror="this.src='https://placehold.co/64x64/E0E0E0/333?text=Logo'; this.onerror=null;"
                 >
                 <div>
-                  <h3 class="text-2xl font-bold text-gray-900">어센덱스 (AscendEX)</h3>
-                  <p class="text-lg font-semibold" style="color: var(--brand-blue);">지정가 0% / 시장가 0.02%</p>
+                  <!-- [수정] 모바일: text-xl / sm이상: text-2xl -->
+                  <h3 class="text-xl sm:text-2xl font-bold text-gray-900">어센덱스 (AscendEX)</h3>
+                  <!-- [수정] 모바일: text-base / sm이상: text-lg -->
+                  <p class="text-base sm:text-lg font-semibold" style="color: var(--brand-blue);">지정가 0% / 시장가 0.02%</p>
                 </div>
               </div>
-              <a href="#" class="bg-blue-800 text-white font-bold py-3 px-8 rounded-lg text-lg whitespace-nowrap btn-hover" style="background-color: var(--brand-blue);">
+              <!-- [수정] 모바일: w-full, text-base / md이상: w-auto, text-lg -->
+              <a href="#" class="w-full md:w-auto bg-blue-800 text-white font-bold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg whitespace-nowrap btn-hover text-center" style="background-color: var(--brand-blue);">
                 가입하기
               </a>
             </div>
 
-            <!-- 2. XT 거래소 (XT.com) 카드 -->
+            <!-- 2. XT 거래소 (XT.com) 카드 [수정] -->
             <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 shadow-lg card-hover fade-in fade-in-3">
-              <div class="flex items-center space-x-5">
+              <!-- [수정] 모바일: space-x-4 / sm이상: space-x-5 -->
+              <div class="flex items-center space-x-4 sm:space-x-5">
                 <img 
                   src="unnamed (5).jpg" 
                   alt="XT 거래소 로고" 
-                  class="w-16 h-16 rounded-full object-cover bg-gray-200 shadow-md"
+                  /* [수정] 모바일: w-14 h-14 / sm이상: w-16 h-16 */
+                  class="w-14 h-14 sm:w-16 h-16 rounded-full object-cover bg-gray-200 shadow-md flex-shrink-0"
                   onerror="this.src='https://placehold.co/64x64/E0E0E0/333?text=Logo'; this.onerror=null;"
                 >
                 <div>
-                  <h3 class="text-2xl font-bold text-gray-900">XT 거래소 (XT.com)</h3>
-                  <p class="text-lg font-semibold" style="color: var(--brand-blue);">수수료 40% 페이백</p>
+                  <!-- [수정] 모바일: text-xl / sm이상: text-2xl -->
+                  <h3 class="text-xl sm:text-2xl font-bold text-gray-900">XT 거래소 (XT.com)</h3>
+                  <!-- [수정] 모바일: text-base / sm이상: text-lg -->
+                  <p class="text-base sm:text-lg font-semibold" style="color: var(--brand-blue);">수수료 40% 페이백</p>
                 </div>
               </div>
-              <a href="#" class="bg-blue-800 text-white font-bold py-3 px-8 rounded-lg text-lg whitespace-nowrap btn-hover" style="background-color: var(--brand-blue);">
+              <!-- [수정] 모바일: w-full, text-base / md이상: w-auto, text-lg -->
+              <a href="#" class="w-full md:w-auto bg-blue-800 text-white font-bold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg whitespace-nowrap btn-hover text-center" style="background-color: var(--brand-blue);">
                 가입하기
               </a>
             </div>
@@ -155,9 +176,10 @@
       </section>
     </main>
 
-    <!-- 4. 푸터 (Footer) -->
+    <!-- 4. 푸터 (Footer) [수정] -->
     <footer class="bg-gray-100 border-t border-gray-200">
-      <div class="container mx-auto max-w-7xl px-6 py-12">
+      <!-- [수정] 모바일: px-4 / sm이상: px-6 -->
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-12">
         <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p class="text-gray-600 text-sm">
             © 2024 매매법 탐구생활. All rights reserved.
