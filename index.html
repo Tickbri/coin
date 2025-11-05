@@ -18,7 +18,6 @@
         color: #1a202c;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        /* 한국어 단어 깨짐 방지를 body에 기본 적용 */
         word-break: keep-all; 
       }
       
@@ -60,17 +59,15 @@
 
   <div class="min-h-screen flex flex-col">
 
-    <!-- 1. 헤더 (Header) [재수정] -->
+    <!-- 1. 헤더 (Header) -->
     <header class="bg-white sticky top-0 z-50">
-      <!-- [수정] flex-nowrap, px-4, py-4, items-center 적용 -->
       <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-nowrap justify-between items-center">
-        <!-- [수정] 모바일: text-lg (더욱 작게) / sm이상: text-3xl / whitespace-nowrap -->
+        <!-- 모바일: text-lg / sm이상: text-3xl -->
         <div class="text-lg sm:text-3xl font-extrabold font-brand flex-shrink-0 whitespace-nowrap" style="color: var(--brand-blue);">
           <a href="index.html">매매법 탐구생활</a>
         </div>
-        <!-- [수정] 모바일: space-x-2 (더욱 좁게) / sm이상: space-x-8 / whitespace-nowrap -->
+        <!-- 모바일: space-x-2, text-xs / sm이상: space-x-8, text-base -->
         <nav class="flex space-x-2 sm:space-x-8 items-center whitespace-nowrap">
-          <!-- [수정] 모바일: text-xs (더욱 작게) / sm이상: text-base -->
           <a href="index.html" class="text-xs sm:text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
             홈
           </a>
@@ -90,14 +87,15 @@
         <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 text-gray-900 font-brand break-keep">
           수수료 없이 거래하세요
         </h1>
-        <!-- [수정] <p> 태그를 두 개로 분리하여 줄바꿈 강제 -->
-        <div class="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl">
-          <p class="break-keep">아래 제휴 거래소 링크를 통해 가입하면</p>
-          <p class="font-bold text-gray-800 break-keep">평생 수수료 혜택!</p>
-        </div>
+        <!-- [수정] <br> 태그를 사용하여 "가입하면" 뒤에 강제 줄바꿈 -->
+        <p class="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl break-keep">
+          아래 제휴 거래소 링크를 통해 가입하면
+          <br> <!-- [추가] 강제 줄바꿈 -->
+          <span class="font-bold text-gray-800">평생 수수료 혜택!</span>
+        </p>
       </section>
 
-      <!-- 3. 제휴 거래소 섹션 (Partner Section) [수정] -->
+      <!-- 3. 제휴 거래소 섹션 (Partner Section) -->
       <section class="bg-gray-50 py-16 sm:py-24">
         <div class="container mx-auto max-w-5xl px-4 sm:px-6">
           <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 sm:mb-16 text-gray-900 font-brand break-keep fade-in fade-in-2">
@@ -107,7 +105,6 @@
           <div class="space-y-8">
             <!-- 1. 어센덱스 (AscendEX) 카드 -->
             <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 shadow-lg card-hover fade-in fade-in-2">
-              <!-- [수정] 모바일에서 카드 내용이 꽉 찰 수 있으므로 w-full 설정 -->
               <div class="flex items-center space-x-4 sm:space-x-5 w-full md:w-auto">
                 <img 
                   src="unnamed.webp" 
@@ -115,10 +112,8 @@
                   class="w-14 h-14 sm:w-16 h-16 rounded-full object-cover bg-gray-200 shadow-md flex-shrink-0"
                   onerror="this.src='https://placehold.co/64x64/E0E0E0/333?text=Logo'; this.onerror=null;"
                 >
-                <div class="flex-grow"> <!-- [수정] 텍스트 영역이 남은 공간을 채우도록 -->
-                  <!-- [수정] break-keep 추가 -->
+                <div class="flex-grow">
                   <h3 class="text-xl sm:text-2xl font-bold text-gray-900 break-keep">어센덱스 (AscendEX)</h3>
-                  <!-- [수정] break-keep 추가 -->
                   <p class="text-base sm:text-lg font-semibold break-keep" style="color: var(--brand-blue);">지정가 0% / 시장가 0.02%</p>
                 </div>
               </div>
@@ -129,7 +124,6 @@
 
             <!-- 2. XT 거래소 (XT.com) 카드 -->
             <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 shadow-lg card-hover fade-in fade-in-3">
-              <!-- [수정] 모바일에서 카드 내용이 꽉 찰 수 있으므로 w-full 설정 -->
               <div class="flex items-center space-x-4 sm:space-x-5 w-full md:w-auto">
                 <img 
                   src="unnamed (5).jpg" 
@@ -137,10 +131,8 @@
                   class="w-14 h-14 sm:w-16 h-16 rounded-full object-cover bg-gray-200 shadow-md flex-shrink-0"
                   onerror="this.src='https://placehold.co/64x64/E0E0E0/333?text=Logo'; this.onerror=null;"
                 >
-                <div class="flex-grow"> <!-- [수정] 텍스트 영역이 남은 공간을 채우도록 -->
-                  <!-- [수정] break-keep 추가 -->
+                <div class="flex-grow">
                   <h3 class="text-xl sm:text-2xl font-bold text-gray-900 break-keep">XT 거래소 (XT.com)</h3>
-                  <!-- [수정] break-keep 추가 -->
                   <p class="text-base sm:text-lg font-semibold break-keep" style="color: var(--brand-blue);">수수료 40% 페이백</p>
                 </div>
               </div>
