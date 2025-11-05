@@ -75,15 +75,15 @@
 
     <!-- 1. 헤더 (Header) [수정] -->
     <header class="bg-white sticky top-0 z-50">
-      <!-- [수정] 모바일: px-4, sm이상: px-6 / 모바일: py-4, sm이상: py-5 / flex-wrap 추가 -->
-      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-4 sm:py-5 flex flex-wrap justify-between items-center">
-        <!-- [수정] 모바일: text-2xl, sm이상: text-3xl -->
-        <div class="text-2xl sm:text-3xl font-extrabold font-brand" style="color: var(--brand-blue);">
+      <!-- [수정] 모바일: px-4, py-4 / sm이상: px-6, py-5 / flex-wrap 제거, justify-between, items-center 적용 -->
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-4 sm:py-5 flex justify-between items-center">
+        <!-- [수정] 모바일: text-2xl / sm이상: text-3xl / flex-shrink-0 추가 -->
+        <div class="text-2xl sm:text-3xl font-extrabold font-brand flex-shrink-0" style="color: var(--brand-blue);">
           <a href="index.html">매매법 탐구생활</a>
         </div>
-        <!-- [수정] 모바일: w-full, 중앙 정렬, mt-3 / sm이상: w-auto, space-x-8, mt-0 -->
-        <nav class="w-full sm:w-auto flex justify-center space-x-6 sm:space-x-8 items-center mt-3 sm:mt-0">
-          <!-- [수정] 모바일: text-sm, sm이상: text-base -->
+        <!-- [수정] 모바일: w-auto, mt-0, space-x-4 / sm이상: space-x-8 -->
+        <nav class="flex space-x-4 sm:space-x-8 items-center">
+          <!-- [수정] 모바일: text-sm / sm이상: text-base -->
           <a href="index.html" class="text-sm sm:text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
             홈
           </a>
@@ -97,7 +97,7 @@
       </div>
     </header>
 
-    <!-- 2. 히어로 섹션 (Hero Section) [수정] -->
+    <!-- 2. 히어로 섹션 (Hero Section) -->
     <main class="flex-grow">
       <!-- [수정] 모바일: px-4, pt-16, pb-20 / sm이상: px-6, pt-24, pb-32 -->
       <section class="container mx-auto max-w-7xl px-4 sm:px-6 pt-16 sm:pt-24 pb-20 sm:pb-32 text-center flex flex-col items-center fade-in fade-in-1">
@@ -111,7 +111,7 @@
         </p>
       </section>
 
-      <!-- 3. 제휴 거래소 섹션 (Partner Section) [수정] -->
+      <!-- 3. 제휴 거래소 섹션 (Partner Section) -->
       <!-- [수정] 모바일: py-16 / sm이상: py-24 -->
       <section class="bg-gray-50 py-16 sm:py-24">
         <!-- [수정] 모바일: px-4 / sm이상: px-6 -->
@@ -122,7 +122,7 @@
           </h2>
           
           <div class="space-y-8">
-            <!-- 1. 어센덱스 (AscendEX) 카드 [수정] -->
+            <!-- 1. 어센덱스 (AscendEX) 카드 -->
             <!-- [수정] 모바일: p-6 / md이상: p-8. items-center 유지 -->
             <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 shadow-lg card-hover fade-in fade-in-2">
               <!-- [수정] 모바일: space-x-4 / sm이상: space-x-5 -->
@@ -147,7 +147,7 @@
               </a>
             </div>
 
-            <!-- 2. XT 거래소 (XT.com) 카드 [수정] -->
+            <!-- 2. XT 거래소 (XT.com) 카드 -->
             <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 shadow-lg card-hover fade-in fade-in-3">
               <!-- [수정] 모바일: space-x-4 / sm이상: space-x-5 -->
               <div class="flex items-center space-x-4 sm:space-x-5">
@@ -176,7 +176,7 @@
       </section>
     </main>
 
-    <!-- 4. 푸터 (Footer) [수정] -->
+    <!-- 4. 푸터 (Footer) -->
     <footer class="bg-gray-100 border-t border-gray-200">
       <!-- [수정] 모바일: px-4 / sm이상: px-6 -->
       <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-12">
