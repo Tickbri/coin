@@ -5,130 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가입방법 - 매매법 탐구생활</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" as="style" crossorigin>
     <style>
-      @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/PuradakGentleGothic.css');
-      body {
-        font-family: 'Noto Sans KR', 'Inter', sans-serif;
-        background-color: #f9fafb; /* 밝은 회색 배경 */
-        color: #1a202c;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        word-break: keep-all; /* [수정] 한국어 단어 깨짐 방지 */
-      }
-      .font-brand {
-        font-family: 'PuradakGentleGothic', 'Noto Sans KR', sans-serif;
-      }
-      :root {
-        --brand-blue: #0a358a;
-      }
-      header {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      }
-      .link-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .link-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07);
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .fade-in {
-        animation: fadeIn 0.8s ease-out forwards;
-      }
+        @font-face {
+            font-family: 'PuradakGentleGothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201@1.0/PuradakGentleGothic-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            word-break: keep-all; /* 한국어 단어 깨짐 방지 */
+        }
+        .font-brand {
+            font-family: 'PuradakGentleGothic', 'Noto Sans KR', sans-serif;
+        }
+
+        /* 비활성화 버튼 스타일 */
+        .btn-disabled {
+            @apply bg-gray-400 cursor-not-allowed hover:bg-gray-400 transform-none hover:scale-100;
+        }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 min-h-screen">
 
-  <div class="min-h-screen flex flex-col">
-
-    <!-- 1. 헤더 (Header) [수정] -->
-    <header class="bg-white sticky top-0 z-50">
-      <!-- [수정] flex-nowrap 추가, px-4, py-4 -->
-      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-nowrap justify-between items-center">
-        <!-- [수정] 모바일: text-lg / sm이상: text-3xl / whitespace-nowrap -->
-        <div class="text-lg sm:text-3xl font-extrabold font-brand flex-shrink-0 whitespace-nowrap" style="color: var(--brand-blue);">
-          <a href="index.html">매매법 탐구생활</a>
+    <!-- Header --><header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto max-w-5xl px-4 sm:px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo (SVG 제거) --><a href="index.html" class="flex items-center space-x-0 flex-shrink-0">
+                    <span class="font-brand text-lg sm:text-2xl font-bold text-[#0a358a] whitespace-nowrap">매매법 탐구생활</span>
+                </a>
+                
+                <!-- Navigation --><nav class="flex items-center space-x-2 sm:space-x-4">
+                    <a href="index.html" class="font-bold text-xs sm:text-sm text-gray-600 whitespace-nowrap hover:text-[#0a358a] transition duration-300">홈</a>
+                    <a href="join.html" class="font-bold text-xs sm:text-sm text-[#0a358a] whitespace-nowrap hover:text-blue-500 transition duration-300">가입방법</a>
+                    <a href="mailto:example@email.com" class="font-bold text-xs sm:text-sm text-gray-600 whitespace-nowrap hover:text-[#0a358a] transition duration-300">문의하기</a>
+                </nav>
+            </div>
         </div>
-        <!-- [수정] 모바일: space-x-2 / sm이상: space-x-8 / whitespace-nowrap -->
-        <nav class="flex space-x-2 sm:space-x-8 items-center whitespace-nowrap">
-          <!-- [수정] 모바일: text-xs / sm이상: text-base -->
-          <a href="index.html" class="text-xs sm:text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
-            홈
-          </a>
-          <a href="join.html" class="text-xs sm:text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
-            가입방법
-          </a>
-          <a href="mailto:contact@example.com" class="text-xs sm:text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
-            문의하기
-          </a>
-        </nav>
-      </div>
     </header>
 
-    <!-- 2. 메인 컨텐츠 -->
-    <main class="flex-grow container mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20">
-      <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 text-center mb-12 md:mb-16 font-brand fade-in">
-        제휴 거래소 가입 방법
-      </h1>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 fade-in" style="animation-delay: 0.2s;">
-        
-        <!-- 왼쪽: 가입 방법 링크 -->
-        <div class="md:col-span-2 flex flex-col space-y-5">
-          <p class="text-base sm:text-lg text-green-600 font-semibold mb-2">
-            아래 링크를 클릭하여 거래소별 가입 방법을 확인하세요.
-          </p>
-          
-          <a href="ascendex_join.html" class="flex items-center justify-between text-lg sm:text-xl text-gray-800 bg-white p-6 sm:p-8 rounded-lg shadow-md link-card">
-            <span class="font-bold">어센덱스 (AscendEX) 가입 방법</span>
-            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-          </a>
-          
-          <a href="xt_join.html" class="flex items-center justify-between text-lg sm:text-xl text-gray-800 bg-white p-6 sm:p-8 rounded-lg shadow-md link-card">
-            <span class="font-bold">XT 거래소 (XT.com) 가입 방법</span>
-            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-          </a>
+    <!-- Main Content --><main class="container mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Left Column: Guides --><div class="md:col-span-2 space-y-8">
+                <div>
+                    <h1 class="font-brand text-3xl sm:text-4xl font-bold mb-4">제휴 거래소 가입 방법</h1>
+                    <p class="text-base sm:text-lg text-gray-600">아래 링크를 클릭하여 거래소별 가입 방법을 확인하세요.</p>
+                </div>
+                
+                <!-- Guide Links --><div class="space-y-6">
+                    <!-- AscendEX Link Card --><a href="ascendex_join.html" class="block bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl hover:border-[#0a358a] transition duration-300 transform hover:-translate-y-1">
+                        <div class="flex justify-between items-center">
+                            <span class="font-brand text-xl sm:text-2xl font-bold text-gray-900">어센덱스 (AscendEX) 가입 방법</span>
+                            <svg class="w-6 h-6 text-[#0a358a]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- XT.com Link Card (비활성화) --><div class="block bg-gray-100 p-6 rounded-xl shadow-lg border border-gray-200 cursor-not-allowed">
+                        <div class="flex justify-between items-center">
+                            <span class="font-brand text-xl sm:text-2xl font-bold text-gray-500">XT 거래소 (XT.com) 가입 방법 (준비중)</span>
+                            <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Contact --><div class="md:col-span-1">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 sticky top-28">
+                    <h2 class="font-brand text-xl sm:text-2xl font-bold mb-4">궁금한 점이 있으신가요?</h2>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6">아래 버튼을 누르시면 텔레그램을 통해 즉시 도움을 드립니다.</p>
+                    <!-- 텔레그램 문의하기 버튼 (비활성화) --><div class="w-full flex items-center justify-center px-6 py-3 btn-disabled text-white font-bold rounded-lg shadow-md">
+                        <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9.78 18.65l.28-4.23 7.68-6.93-10.34 6.34-4.4 1.35 1.57 5.17L9.78 18.65zM19.45 4.03c-.8-.8-2.07-.8-2.87 0l-1.46 1.46 4.23 4.23 1.46-1.46c.8-.8.8-2.07 0-2.87l-1.36-1.36zM3 21l3.59-3.59-4.23-4.23L3 21z"/>
+                        </svg>
+                        <span>텔레그램 문의하기 (준비중)</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        
-        <!-- 오른쪽: 문의하기 버튼 -->
-        <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md flex flex-col items-start">
-          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-            궁금한 점이 있으신가요?
-          </h3>
-          <p class="text-base text-gray-600 mb-6">
-            아래 버튼을 누르시면 텔레그램을 통해 즉시 도움을 드립니다.
-          </p>
-          <a href="#" class="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 sm:py-4 px-6 rounded-lg flex items-center justify-center text-base sm:text-lg transition-colors duration-200" style="background-color: var(--brand-blue);">
-            <span>텔레그램 문의하기</span>
-            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31.09-.85-.32-.85H8.22c-.66 0-.96.63-.6 1.1l4.38 4.16l-5.2 2.35c-.78.35-.78 1.48 0 1.84l3.1 1.29c.28.12.49.33.61.61l1.29 3.1c.35.78 1.48.78 1.84 0l2.35-5.2l4.16 4.38c.47.36 1.1.06 1.1-.6v-8.58c0-.41-.46-.66-.85-.32l-6.92 7.68l-4.23.28c-.37.02-.54.51-.28.78z"/></svg>
-          </a>
-        </div>
-        
-      </div>
     </main>
 
-    <!-- 3. 푸터 (Footer) -->
-    <footer class="bg-white border-t border-gray-200 mt-12 sm:mt-20">
-      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-12">
-        <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-          <p class="text-gray-600 text-sm">
-            © 2024 매매법 탐구생활. All rights reserved.
-          </p>
-          <div class="flex justify-center space-x-6 mt-4 md:mt-0">
-            <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">이용약관</a>
-            <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">개인정보처리방침</a>
-          </div>
+    <!-- Footer --><footer class="bg-gray-800 text-gray-400 py-12 mt-16">
+        <div class="container mx-auto max-w-5xl px-4 sm:px-6 text-center">
+            <p class="text-sm">&copy; 2024 매매법 탐구생활. All rights reserved.</p>
+            <p class="text-xs mt-2">본 사이트는 정보 제공을 목적으로 하며, 투자에 대한 책임은 본인에게 있습니다.</p>
         </div>
-      </div>
     </footer>
-
-  </div>
 
 </body>
 </html>
