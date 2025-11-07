@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
     <style>
       @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/PuradakGentleGothic.css');
       body {
@@ -17,6 +16,7 @@
         color: #1a202c;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        word-break: keep-all; /* [수정] 한국어 단어 깨짐 방지 */
       }
       .font-brand {
         font-family: 'PuradakGentleGothic', 'Noto Sans KR', sans-serif;
@@ -27,8 +27,6 @@
       header {
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
       }
-      
-      /* 링크 카드 호버 */
       .link-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
@@ -36,7 +34,6 @@
         transform: translateY(-5px);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07);
       }
-      /* 컨텐츠 페이드인 애니메이션 */
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -48,23 +45,26 @@
 </head>
 <body class="bg-gray-50">
 
-  <!-- 전체 페이지 래퍼 -->
   <div class="min-h-screen flex flex-col">
 
-    <!-- 1. 헤더 (Header) -->
+    <!-- 1. 헤더 (Header) [수정] -->
     <header class="bg-white sticky top-0 z-50">
-      <div class="container mx-auto max-w-7xl px-6 py-5 flex justify-between items-center">
-        <div class="text-3xl font-extrabold font-brand" style="color: var(--brand-blue);">
+      <!-- [수정] flex-nowrap 추가, px-4, py-4 -->
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-nowrap justify-between items-center">
+        <!-- [수정] 모바일: text-lg / sm이상: text-3xl / whitespace-nowrap -->
+        <div class="text-lg sm:text-3xl font-extrabold font-brand flex-shrink-0 whitespace-nowrap" style="color: var(--brand-blue);">
           <a href="index.html">매매법 탐구생활</a>
         </div>
-        <nav class="flex space-x-8 items-center">
-          <a href="index.html" class="text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
+        <!-- [수정] 모바일: space-x-2 / sm이상: space-x-8 / whitespace-nowrap -->
+        <nav class="flex space-x-2 sm:space-x-8 items-center whitespace-nowrap">
+          <!-- [수정] 모바일: text-xs / sm이상: text-base -->
+          <a href="index.html" class="text-xs sm:text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
             홈
           </a>
-          <a href="join.html" class="text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
+          <a href="join.html" class="text-xs sm:text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
             가입방법
           </a>
-          <a href="mailto:contact@example.com" class="text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
+          <a href="mailto:contact@example.com" class="text-xs sm:text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
             문의하기
           </a>
         </nav>
@@ -72,40 +72,39 @@
     </header>
 
     <!-- 2. 메인 컨텐츠 -->
-    <main class="flex-grow container mx-auto max-w-6xl px-6 py-20">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-16 font-brand fade-in">
+    <main class="flex-grow container mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-20">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 text-center mb-12 md:mb-16 font-brand fade-in">
         제휴 거래소 가입 방법
       </h1>
       
-      <!-- 2단 레이아웃 -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 fade-in" style="animation-delay: 0.2s;">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 fade-in" style="animation-delay: 0.2s;">
         
-        <!-- 왼쪽: 가입 방법 링크 (2/3 영역) -->
-        <div class="md:col-span-2 flex flex-col space-y-6">
-          <p class="text-lg text-green-600 font-semibold mb-2">
+        <!-- 왼쪽: 가입 방법 링크 -->
+        <div class="md:col-span-2 flex flex-col space-y-5">
+          <p class="text-base sm:text-lg text-green-600 font-semibold mb-2">
             아래 링크를 클릭하여 거래소별 가입 방법을 확인하세요.
           </p>
           
-          <a href="ascendex_join.html" class="flex items-center justify-between text-xl text-gray-800 bg-white p-8 rounded-lg shadow-md link-card">
+          <a href="ascendex_join.html" class="flex items-center justify-between text-lg sm:text-xl text-gray-800 bg-white p-6 sm:p-8 rounded-lg shadow-md link-card">
             <span class="font-bold">어센덱스 (AscendEX) 가입 방법</span>
             <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
           </a>
           
-          <a href="xt_join.html" class="flex items-center justify-between text-xl text-gray-800 bg-white p-8 rounded-lg shadow-md link-card">
+          <a href="xt_join.html" class="flex items-center justify-between text-lg sm:text-xl text-gray-800 bg-white p-6 sm:p-8 rounded-lg shadow-md link-card">
             <span class="font-bold">XT 거래소 (XT.com) 가입 방법</span>
             <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
           </a>
         </div>
         
-        <!-- 오른쪽: 문의하기 버튼 (1/3 영역) -->
-        <div class="bg-white p-8 rounded-lg shadow-md flex flex-col items-start">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+        <!-- 오른쪽: 문의하기 버튼 -->
+        <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md flex flex-col items-start">
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
             궁금한 점이 있으신가요?
           </h3>
-          <p class="text-gray-600 mb-6">
+          <p class="text-base text-gray-600 mb-6">
             아래 버튼을 누르시면 텔레그램을 통해 즉시 도움을 드립니다.
           </p>
-          <a href="#" class="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center text-lg transition-colors duration-200" style="background-color: var(--brand-blue);">
+          <a href="#" class="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 sm:py-4 px-6 rounded-lg flex items-center justify-center text-base sm:text-lg transition-colors duration-200" style="background-color: var(--brand-blue);">
             <span>텔레그램 문의하기</span>
             <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31.09-.85-.32-.85H8.22c-.66 0-.96.63-.6 1.1l4.38 4.16l-5.2 2.35c-.78.35-.78 1.48 0 1.84l3.1 1.29c.28.12.49.33.61.61l1.29 3.1c.35.78 1.48.78 1.84 0l2.35-5.2l4.16 4.38c.47.36 1.1.06 1.1-.6v-8.58c0-.41-.46-.66-.85-.32l-6.92 7.68l-4.23.28c-.37.02-.54.51-.28.78z"/></svg>
           </a>
@@ -115,8 +114,8 @@
     </main>
 
     <!-- 3. 푸터 (Footer) -->
-    <footer class="bg-white border-t border-gray-200 mt-20">
-      <div class="container mx-auto max-w-7xl px-6 py-12">
+    <footer class="bg-white border-t border-gray-200 mt-12 sm:mt-20">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-12">
         <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p class="text-gray-600 text-sm">
             © 2024 매매법 탐구생활. All rights reserved.
