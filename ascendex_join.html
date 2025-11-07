@@ -8,15 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
     <style>
       @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/PuradakGentleGothic.css');
       body {
         font-family: 'Noto Sans KR', 'Inter', sans-serif;
-        background-color: #f9fafb; /* 밝은 회색 배경 */
+        background-color: #f9fafb;
         color: #1a202c;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        word-break: keep-all; /* [수정] 한국어 단어 깨짐 방지 */
       }
       .font-brand {
         font-family: 'PuradakGentleGothic', 'Noto Sans KR', sans-serif;
@@ -27,24 +27,36 @@
       header {
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
       }
-      /* 컨텐츠 영역 스타일 */
       .content-box {
         background-color: #ffffff;
         border-radius: 12px;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07);
       }
       .content-box h2 {
-        font-size: 1.75rem; /* 28px */
+        font-size: 1.5rem; /* 24px */
+        line-height: 2rem;
         font-weight: 700;
         color: #111827;
         margin-bottom: 1.25rem;
         padding-bottom: 1rem;
         border-bottom: 2px solid #e5e7eb;
       }
+      @media (min-width: 640px) {
+        .content-box h2 {
+          font-size: 1.75rem; /* 28px */
+          line-height: 2.25rem;
+        }
+      }
       .content-box p, .content-box li {
-        font-size: 1.125rem; /* 18px */
-        color: #374151; /* 본문 텍스트 색상 */
-        line-height: 1.8;
+        font-size: 1rem; /* 16px */
+        line-height: 1.75;
+        color: #374151;
+      }
+      @media (min-width: 640px) {
+        .content-box p, .content-box li {
+          font-size: 1.125rem; /* 18px */
+          line-height: 1.8;
+        }
       }
       .content-box li {
         margin-bottom: 1rem;
@@ -58,14 +70,12 @@
         color: #111827;
         font-weight: 600;
       }
-       /* 버튼 호버 애니메이션 */
       .btn-hover {
          transition: transform 0.2s ease-in-out, background-color 0.2s ease;
       }
       .btn-hover:hover {
         transform: scale(1.03);
       }
-      /* 컨텐츠 페이드인 애니메이션 */
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -77,23 +87,26 @@
 </head>
 <body class="bg-gray-50">
 
-  <!-- 전체 페이지 래퍼 -->
   <div class="min-h-screen flex flex-col">
 
-    <!-- 1. 헤더 (Header) -->
+    <!-- 1. 헤더 (Header) [수정] -->
     <header class="bg-white sticky top-0 z-50">
-      <div class="container mx-auto max-w-7xl px-6 py-5 flex justify-between items-center">
-        <div class="text-3xl font-extrabold font-brand" style="color: var(--brand-blue);">
+      <!-- [수정] flex-nowrap 추가, px-4, py-4 -->
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-nowrap justify-between items-center">
+        <!-- [수정] 모바일: text-lg / sm이상: text-3xl / whitespace-nowrap -->
+        <div class="text-lg sm:text-3xl font-extrabold font-brand flex-shrink-0 whitespace-nowrap" style="color: var(--brand-blue);">
           <a href="index.html">매매법 탐구생활</a>
         </div>
-        <nav class="flex space-x-8 items-center">
-          <a href="index.html" class="text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
+        <!-- [수정] 모바일: space-x-2 / sm이상: space-x-8 / whitespace-nowrap -->
+        <nav class="flex space-x-2 sm:space-x-8 items-center whitespace-nowrap">
+          <!-- [수정] 모바일: text-xs / sm이상: text-base -->
+          <a href="index.html" class="text-xs sm:text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
             홈
           </a>
-          <a href="join.html" class="text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
+          <a href="join.html" class="text-xs sm:text-base font-semibold" style="color: var(--brand-blue); border-bottom: 2px solid var(--brand-blue); padding-bottom: 4px;">
             가입방법
           </a>
-          <a href="mailto:contact@example.com" class="text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
+          <a href="mailto:contact@example.com" class="text-xs sm:text-base font-semibold text-gray-600 hover:text-gray-900 transition-colors duration-200">
             문의하기
           </a>
         </nav>
@@ -101,13 +114,13 @@
     </header>
 
     <!-- 2. 메인 컨텐츠 (어센덱스 가입방법) -->
-    <main class="flex-grow container mx-auto max-w-4xl px-6 py-20">
+    <main class="flex-grow container mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-20">
       <div class="fade-in">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-12 font-brand">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 text-center mb-8 md:mb-12 font-brand">
           어센덱스 (AscendEX) 가입 및 KYC 인증
         </h1>
         
-        <div class="content-box p-8 md:p-12">
+        <div class="content-box p-6 md:p-12">
           <h2>가입 절차 (3단계)</h2>
           <ul class="space-y-4">
             <li>
@@ -124,8 +137,8 @@
             </li>
           </ul>
 
-          <h2 class="mt-16">KYC 신원 인증 방법</h2>
-          <p class="mb-6 text-lg">KYC(Know Your Customer) 인증은 출금 한도를 높이고 거래소의 모든 기능을 사용하기 위해 필요합니다. (일반적인 절차 기준)</p>
+          <h2 class="mt-12 sm:mt-16">KYC 신원 인증 방법</h2>
+          <p class="mb-6 text-base sm:text-lg">KYC(Know Your Customer) 인증은 출금 한도를 높이고 거래소의 모든 기능을 사용하기 위해 필요합니다. (일반적인 절차 기준)</p>
           <ul class="space-y-4 mt-4">
             <li>
               <strong>1. KYC 인증 시작:</strong>
@@ -148,8 +161,7 @@
               <p>모든 정보를 제출한 후, 거래소의 검토를 기다립니다. 승인 완료 시 이메일 등으로 알림이 전송됩니다.</p>
             </li>
           </ul>
-
-          <a href="#" class="inline-block mt-10 bg-blue-800 text-white font-bold py-4 px-10 rounded-lg text-lg whitespace-nowrap btn-hover" style="background-color: var(--brand-blue);">
+          <a href="#" class="w-full sm:w-auto text-center inline-block mt-8 sm:mt-10 bg-blue-800 text-white font-bold py-3 sm:py-4 px-8 sm:px-10 rounded-lg text-base sm:text-lg whitespace-nowrap btn-hover" style="background-color: var(--brand-blue);">
             어센덱스 가입하러 가기
           </a>
         </div>
@@ -157,8 +169,8 @@
     </main>
 
     <!-- 3. 푸터 (Footer) -->
-    <footer class="bg-white border-t border-gray-200 mt-20">
-      <div class="container mx-auto max-w-7xl px-6 py-12">
+    <footer class="bg-white border-t border-gray-200 mt-12 sm:mt-20">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 py-12">
         <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p class="text-gray-600 text-sm">
             © 2024 매매법 탐구생활. All rights reserved.
